@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - BTS SIO 🎀</title>
+    <link rel="stylesheet" href="./style1.css">
+    <style>
+        /* --- Style Général --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #ffdde1, #ee9ca7);
+            text-align: center;
+            padding: 50px 20px;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #ff4081;
+            text-shadow: 2px 2px 5px rgba(255, 64, 129, 0.2);
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #ff80ab;
+            margin-bottom: 10px;
+        }
+
+        /* --- Liste du sommaire --- */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: rgba(255, 182, 193, 0.7);
+            border-radius: 25px;
+            padding: 15px;
+            margin: 10px auto;
+            width: 60%;
+            font-size: 20px;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+        }
+
+        ul li:hover {
+            background: #ff4081;
+            transform: scale(1.05);
+            box-shadow: 0px 4px 10px rgba(255, 64, 129, 0.3);
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 5px 15px;
+            background: #ff80ab;
+            border-radius: 20px;
+            transition: all 0.3s ease-in-out;
+            margin-left: 10px;
+        }
+
+        ul li a:hover {
+            background: white;
+            color: #ff4081;
+            border: 2px solid #ff4081;
+        }
+
+        /* --- Bouton Retour Accueil --- */
+        .home-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            background: #ff80ab;
+            border-radius: 25px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 4px 10px rgba(255, 64, 129, 0.3);
+        }
+
+        .home-button:hover {
+            background: white;
+            color: #ff4081;
+            border: 2px solid #ff4081;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Bienvenue sur l'Accueil 🎀</h1>
+    <h2>Sommaire :</h2>
+
+    <ul>
+        <li>Présentation BTS SIO <a href="./accueil.html">Here</a></li>
+        <li>BTS SISR <a href="./sisr.html">Here</a></li>
+        <li>BTS SLAM <a href="./slam.html">Here</a></li>
+    </ul>
+
+    <a href="../index.html" class="home-button">Retour à l'accueil</a>
+
+</body>
+</html>

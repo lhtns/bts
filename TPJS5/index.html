@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module de Facturation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="facture-container">
+        <header class="facture-header">
+            <div>
+                <h1>Nom de la compagnie</h1>
+                <p>Adresse postale</p>
+                <p>Détails de contact</p>
+            </div>
+            <div class="facture-title">
+                <h2>FACTURE</h2>
+                <p id="date-facture"></p>
+            </div>
+        </header>
+
+        <section class="facture-infos">
+            <div>
+                <h3>Destinataire</h3>
+                <p>Nom</p>
+                <p>Nom de la société</p>
+                <p>Adresse postale</p>
+                <p>Téléphone</p>
+                <p>Email</p>
+            </div>
+            <div>
+                <h3>Envoyez à</h3>
+                <p>Nom</p>
+                <p>Nom de la société</p>
+                <p>Adresse postale</p>
+                <p>Téléphone</p>
+                <p>Email</p>
+            </div>
+        </section>
+
+        <table id="table_inv" class="facture-table">
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Quantité</th>
+                    <th>Prix unitaire (€)</th>
+                    <th>Total (€)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="row" id="modeleLigne">
+                    <td><input type="text" class="desc" placeholder="Description"></td>
+                    <td><input type="number" class="qte" min="0" value="0"></td>
+                    <td><input type="number" class="prix" min="0" step="0.01" value="0.00"></td>
+                    <td><input type="text" class="total" readonly value="0.00"></td>
+                </tr>
+                <tr class="row lastrow" id="lastligne">
+                    <td colspan="4">Remarques, notes et instructions de paiement</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="facture-buttons">
+            <button id="ajouter-ligne">Ajouter une ligne</button>
+            <button id="remplir-auto">Remplir automatiquement</button>
+            <button id="calculer">Calculer</button>
+            <button id="annuler">Annuler</button>
+            <button id="imprimer">Imprimer la facture 🖨️</button>
+        </div>
+
+        <div class="facture-total">
+            <p>Sous-total : <span id="sous-total">0.00</span> €</p>
+            <p>
+                Remise : 
+                <input type="number" id="remise" value="10" step="1" min="0"> % 
+            </p>
+            <p>Sous-total moins remises : <span id="remise-total">0.00</span> €</p>
+            <p>Taux d'imposition : 10.00 %</p>
+            <p>Taxe totale : <span id="taxe-total">0.00</span> €</p>
+            <p>Expédition, manutention : 5.00 €</p>
+            <h3>SOLDE DU : <span id="solde-total">0.00</span> €</h3>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

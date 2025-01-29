@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigation</title>
+    <style>
+        /* Reset de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Barre de navigation */
+        nav {
+            background: #007BFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            padding: 12px;
+            margin: 8px 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <a href="google.html" target="f2">📍 Localisation</a>
+            <a href="video.html" target="f2">🎓 Présentation BTS SIO</a>
+            <a href="https://ingetis.com/" target="content-frame">🏫 Site du lycée</a>
+            <a href="tab.html" target="f2">📊 Tableau Annexe 1</a>
+            <a href="formulaire.html" target="f2">📝 Formulaire</a>
+            <a href="cv.html" target="f2">📄 CV et Lettre</a>
+        </ul>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="id.js"></script>
+    <title>Identification</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* --- Style Général --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #8EC5FC, #E0C3FC);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        /* --- Conteneur Identification --- */
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+            width: 350px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #333;
+            text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- Champs de saisie --- */
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.5);
+            transition: 0.3s ease;
+        }
+
+        input:focus {
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        label {
+            font-weight: bold;
+            color: #444;
+        }
+
+        /* --- Boutons --- */
+        button {
+            padding: 12px 20px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        button:first-of-type {
+            background: #007BFF;
+            color: white;
+        }
+
+        button:first-of-type:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+
+        button:last-of-type {
+            background: #FF4F5A;
+            color: white;
+        }
+
+        button:last-of-type:hover {
+            background: #C03440;
+            transform: scale(1.05);
+        }
+
+        /* --- Footer --- */
+        footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #444;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 400px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Identification 🔐</h1>
+        
+        <div>
+            <label for="t1">Identifiant</label><br>
+            <input type="text" id="t1"><br><br>
+        </div>
+        
+        <div>
+            <label for="h1">Mot de passe</label><br>
+            <input type="password" id="h1"><br><br>
+        </div>
+        
+        <div>
+            <button onclick="login()">Se connecter</button>
+            <button onclick="history.back()">Retour</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 TEDx Paris. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

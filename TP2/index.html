@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Principale 🎀</title>
+    <link rel="stylesheet" href="css.css">
+    <style>
+        /* --- Style Général --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+            text-align: center;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #ff69b4;
+            text-shadow: 2px 2px 5px rgba(255, 105, 180, 0.2);
+            margin-bottom: 20px;
+        }
+
+        /* --- Bouton Retour Accueil --- */
+        .home-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 15px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            background: #ff80ab;
+            border-radius: 25px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 4px 10px rgba(255, 64, 129, 0.3);
+        }
+
+        .home-button:hover {
+            background: white;
+            color: #ff4081;
+            border: 2px solid #ff4081;
+        }
+
+        /* --- Style des iframes --- */
+        .iframe-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        iframe {
+            border: 3px solid #ff80ab;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(255, 105, 180, 0.3);
+        }
+
+        /* Taille spécifique pour les iframes */
+        .sommaire {
+            width: 30%;
+            height: 800px;
+        }
+
+        .page-content {
+            width: 65%;
+            height: 800px;
+        }
+
+        @media (max-width: 768px) {
+            .iframe-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .sommaire, .page-content {
+                width: 90%;
+                height: 600px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="../index.html" class="home-button">Retour à l'accueil</a>
+    <h1>Page Principale 🎀</h1>
+
+    <div class="iframe-container">
+        <iframe src="sommaire.html" class="sommaire" name="f1"></iframe>
+        <iframe src="page2.html" class="page-content" name="f2"></iframe>
+        <iframe src="page4.html" class="page-content" name="f3"></iframe>
+    </div>
+
+</body>
+</html>

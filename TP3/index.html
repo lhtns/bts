@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil Animé 🎀</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* --- Style Général --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(-45deg, #fbc2eb, #a6c1ee, #fbc2eb, #a6c1ee);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(255, 105, 180, 0.3);
+            width: 50%;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #ff69b4;
+            text-shadow: 2px 2px 5px rgba(255, 105, 180, 0.2);
+            margin-bottom: 20px;
+        }
+
+        /* --- Liens stylisés --- */
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .link, .home-button {
+            display: inline-block;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 4px 6px rgba(255, 105, 180, 0.3);
+        }
+
+        .link {
+            background: #ff80ab;
+        }
+
+        .link:hover {
+            background: white;
+            color: #ff4081;
+            border: 2px solid #ff4081;
+        }
+
+        .home-button {
+            background: #ff69b4;
+        }
+
+        .home-button:hover {
+            background: white;
+            color: #ff69b4;
+            border: 2px solid #ff69b4;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 80%;
+            }
+
+            .link, .home-button {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Bienvenue sur le TP3 🎀</h1>
+
+        <nav class="nav-links">
+            <a href="formulaire.html" class="link">Formulaire</a>
+            <a href="page.html" class="link">Page structurée</a>
+            <a href="../index.html" class="home-button">Retour à l'accueil</a>
+        </nav>
+    </div>
+
+</body>
+</html>

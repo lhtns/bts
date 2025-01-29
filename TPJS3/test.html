@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 Exercices JavaScript Interactifs</title>
+    <style>
+       body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #ffebf3;
+    color: #d63384;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+video {
+    display: none;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    background-color: rgba(255, 240, 245, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+    width: 80%;
+    margin: 20px auto;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #ff69b4;
+    text-shadow: 2px 2px 5px rgba(255, 20, 147, 0.3);
+}
+
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #ffe4e1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(255, 105, 180, 0.3);
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid #ffb6c1;
+    text-align: center;
+    font-weight: bold;
+    color: #d63384;
+}
+
+th {
+    background-color: #ff69b4;
+    color: white;
+    font-size: 1.2em;
+}
+
+td {
+    background-color: #fff0f5;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #ff85a2;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(255, 105, 180, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #ff3b7b;
+    transform: scale(1.1);
+}
+
+.code-box {
+    background-color: #ffe4e1;
+    color: #ff1493;
+    padding: 15px;
+    border-radius: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    margin-top: 10px;
+    display: none;
+    text-align: left;
+    box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+}
+
+p {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+@keyframes sparkle {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+h1 {
+    animation: sparkle 1.5s infinite;
+}
+
+    </style>
+</head>
+<body>
+
+<video id="background-video" autoplay muted loop>
+    <source src="A.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la balise vidéo.
+</video>
+
+<div class="content">
+    <h1>15 Exercices JavaScript Interactifs</h1>
+    <table>
+        <tr>
+            <th>Exercice</th>
+            <th>Actions</th>
+        </tr>
+
+        <!-- Exercice 1 -->
+        <tr>
+            <td>1. Convertir Celsius en Fahrenheit</td>
+            <td>
+                <button onclick="convertirTemperature()">Vérifier</button>
+                <button onclick="afficherCode('code1')">Afficher le code</button>
+                <div id="code1" class="code-box">
+<pre>
+function convertirTemperature() {
+    const celsius = prompt("Entrez la température en °C :");
+    const fahrenheit = (celsius * 9 / 5) + 32;
+    alert(`${celsius}°C = ${fahrenheit}°F`);
+}
+</pre>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Exercice 2 -->
+        <tr>
+            <td>2. Ajuster la taille du texte</td>
+            <td>
+                <p id="texte">Ceci est un texte ajustable.</p>
+                <button onclick="augmenterTaille()">Augmenter</button>
+                <button onclick="reduireTaille()">Réduire</button>
+                <button onclick="afficherCode('code2')">Afficher le code</button>
+                <div id="code2" class="code-box">
+<pre>
+function augmenterTaille() {
+    let texte = document.getElementById('texte');
+    let taille = parseInt(window.getComputedStyle(texte).fontSize);
+    texte.style.fontSize = (taille + 2) + 'px';
+}
+
+function reduireTaille() {
+    let texte = document.getElementById('texte');
+    let taille = parseInt(window.getComputedStyle(texte).fontSize);
+    texte.style.fontSize = (taille - 2) + 'px';
+}
+</pre>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Exercice 3 -->
+        <tr>
+            <td>3. Compter le nombre de clics</td>
+            <td>
+                <p id="compteur">0</p>
+                <button onclick="incrementer()">Incrémenter</button>
+                <button onclick="afficherCode('code3')">Afficher le code</button>
+                <div id="code3" class="code-box">
+<pre>
+function incrementer() {
+    let compteur = parseInt(document.getElementById('compteur').textContent);
+    document.getElementById('compteur').textContent = compteur + 1;
+}
+</pre>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Exercice 4 -->
+        <tr>
+            <td>4. Salutation selon l'heure</td>
+            <td>
+                <button onclick="saluer()">Afficher</button>
+                <button onclick="afficherCode('code4')">Afficher le code</button>
+                <div id="code4" class="code-box">
+<pre>
+function saluer() {
+    const heure = new Date().getHours();
+    if (heure < 12) alert("Bonjour");
+    else if (heure < 18) alert("Bon après-midi");
+    else alert("Bonsoir");
+}
+</pre>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Exercice 5 -->
+        <tr>
+            <td>5. Calculer l'âge</td>
+            <td>
+                <button onclick="calculerAge()">Calculer</button>
+                <button onclick="afficherCode('code5')">Afficher le code</button>
+                <div id="code5" class="code-box">
+<pre>
+function calculerAge() {
+    const anneeNaissance = prompt("Entrez votre année de naissance :");
+    const anneeActuelle = new Date().getFullYear();
+    alert(`Votre âge est : ${anneeActuelle - anneeNaissance}`);
+}
+</pre>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Exercice 6 -->
+        <tr>
+            <td>6. Trouver le nombre maximum</td>
+            <td>
+                <button onclick="trouverMax()">Trouver</button>
+                <button onclick="afficherCode('code6')">Afficher le code</button>
+                <div id="code6" class="code-box">
+<pre>
+function trouverMax() {
+    const nombres = prompt("Entrez des nombres séparés par des virgules :").split(",");
+    const max = Math.max(...nombres.map(Number));
+    alert(`Le nombre maximum est : ${max}`);
+}
+</pre>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Exercice 7 -->
+        <tr>
+            <td>7. Compter les voyelles</td>
+            <td>
+                <button onclick="compterVoyelles()">Compter</button>
+                <button onclick="afficherCode('code7')">Afficher le code</button>
+                <div id="code7" class="code-box">
+<pre>
+function compterVoyelles() {
+    const texte = prompt("Entrez un texte :").toLowerCase();
+    const voyelles = texte.match(/[aeiouy]/g);
+    alert(`Nombre de voyelles : ${voyelles ? voyelles.length : 0}`);
+}
+</pre>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Exercice 8 -->
+        <tr>
+            <td>8. Calculer le pourboire</td>
+            <td>
+                <button onclick="calculerPourboire()">Calculer</button>
+                <button onclick="afficherCode('code8')">Afficher le code</button>
+                <div id="code8" class="code-box">
+<pre>
+function calculerPourboire() {
+    const montant = parseFloat(prompt("Entrez le montant de l'addition (€):"));
+    const pourboire = (montant * 0.15).toFixed(2);
+    alert(`Le pourboire recommandé est : ${pourboire} €`);
+}
+</pre>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Exercice 9 -->
+        <tr>
+            <td>9. Vérifier si un nombre est pair ou impair</td>
+            <td>
+                <button onclick="verifierPairImpair()">Vérifier</button>
+                <button onclick="afficherCode('code9')">Afficher le code</button>
+                <div id="code9" class="code-box">
+<pre>
+function verifierPairImpair() {
+    const nombre = parseInt(prompt("Entrez un nombre:"));
+    const resultat = nombre % 2 === 0 ? "pair" : "impair";
+    alert(`Le nombre ${nombre} est ${resultat}.`);
+}
+</pre>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Exercice 10 -->
+        <tr>
+            <td>10. Calculer les calories brûlées</td>
+            <td>
+                <button onclick="calculerCalories()">Calculer</button>
+                <button onclick="afficherCode('code10')">Afficher le code</button>
+                <div id="code10" class="code-box">
+<pre>
+function calculerCalories() {
+    const poids = parseFloat(prompt("Entrez votre poids (kg) :"));
+    const temps = parseFloat(prompt("Entrez le temps de course (minutes) :"));
+    const calories = (poids * 0.063) * temps;
+    alert(`Vous avez brûlé environ ${calories.toFixed(2)} calories.`);
+}
+</pre>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Exercice 11 -->
+        <tr>
+            <td>11. Calculer le périmètre d'un rectangle</td>
+            <td>
+                <button onclick="calculerPerimetre()">Calculer</button>
+                <button onclick="afficherCode('code11')">Afficher le code</button>
+                <div id="code11" class="code-box">
+<pre>
+function calculerPerimetre() {
+    const longueur = parseFloat(prompt("Entrez la longueur du rectangle (cm) :"));
+    const largeur = parseFloat(prompt("Entrez la largeur du rectangle (cm) :"));
+    const perimetre = 2 * (longueur + largeur);
+    alert(`Le périmètre du rectangle est : ${perimetre} cm`);
+}
+</pre>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Exercice 12 -->
+        <tr>
+            <td>12. Créer un tableau dynamique</td>
+            <td>
+                <button onclick="creerTableau()">Créer</button>
+                <button onclick="afficherCode('code12')">Afficher le code</button>
+                <div id="code12" class="code-box">
+<pre>
+function creerTableau() {
+    const taille = parseInt(prompt("Entrez la taille du tableau :"));
+    const tableau = [];
+    for (let i = 0; i < taille; i++) {
+        tableau.push(prompt(`Entrez l'élément ${i+1}:`));
+    }
+    alert(`Tableau créé: ${tableau.join(', ')}`);
+}
+</pre>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Exercice 13 -->
+        <tr>
+            <td>13. Vérifier si un mot est un palindrome</td>
+            <td>
+                <button onclick="verifierPalindrome()">Vérifier</button>
+                <button onclick="afficherCode('code13')">Afficher le code</button>
+                <div id="code13" class="code-box">
+<pre>
+function verifierPalindrome() {
+    const mot = prompt("Entrez un mot :");
+    const motInverse = mot.split('').reverse().join('');
+    alert(mot === motInverse ? "Le mot est un palindrome." : "Le mot n'est pas un palindrome.");
+}
+</pre>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Exercice 14 -->
+        <tr>
+            <td>14. Convertir un nombre en binaire</td>
+            <td>
+                <button onclick="convertirBinaire()">Convertir</button>
+                <button onclick="afficherCode('code14')">Afficher le code</button>
+                <div id="code14" class="code-box">
+<pre>
+function convertirBinaire() {
+    const nombre = parseInt(prompt("Entrez un nombre :"));
+    alert(`Le nombre ${nombre} en binaire est : ${nombre.toString(2)}`);
+}
+</pre>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Exercice 15 -->
+        <tr>
+            <td>15. Animer un élément</td>
+            <td>
+                <button onclick="animerElement()">Animer</button>
+                <button onclick="afficherCode('code15')">Afficher le code</button>
+                <div id="code15" class="code-box">
+<pre>
+function animerElement() {
+    let elem = document.createElement('div');
+    elem.textContent = "Je suis animé!";
+    elem.style.position = "absolute";
+    elem.style.left = "0px";
+    elem.style.top = "0px";
+    elem.style.backgroundColor = "red";
+    elem.style.padding = "10px";
+    document.body.appendChild(elem);
+
+    let posX = 0;
+    let posY = 0;
+    function deplacer() {
+        if (posX < window.innerWidth - 100) {
+            posX += 5;
+            posY += 3;
+            elem.style.left = posX + "px";
+            elem.style.top = posY + "px";
+            requestAnimationFrame(deplacer);
+        }
+    }
+    deplacer();
+}
+</pre>
+                </div>
+            </td>
+        </tr>
+
+    </table>
+</div>
+
+<script>
+    function afficherCode(id) {
+        const codeBox = document.getElementById(id);
+        codeBox.style.display = codeBox.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function convertirTemperature() {
+        const celsius = prompt("Entrez la température en °C :");
+        const fahrenheit = (celsius * 9 / 5) + 32;
+        alert(`${celsius}°C = ${fahrenheit}°F`);
+    }
+
+    function augmenterTaille() {
+        let texte = document.getElementById('texte');
+        let taille = parseInt(window.getComputedStyle(texte).fontSize);
+        texte.style.fontSize = (taille + 2) + 'px';
+    }
+
+    function reduireTaille() {
+        let texte = document.getElementById('texte');
+        let taille = parseInt(window.getComputedStyle(texte).fontSize);
+        texte.style.fontSize = (taille - 2) + 'px';
+    }
+
+    function incrementer() {
+        let compteur = parseInt(document.getElementById('compteur').textContent);
+        document.getElementById('compteur').textContent = compteur + 1;
+    }
+
+    function saluer() {
+        const heure = new Date().getHours();
+        if (heure < 12) alert("Bonjour");
+        else if (heure < 18) alert("Bon après-midi");
+        else alert("Bonsoir");
+    }
+
+    function calculerAge() {
+        const anneeNaissance = prompt("Entrez votre année de naissance :");
+        const anneeActuelle = new Date().getFullYear();
+        alert(`Votre âge est : ${anneeActuelle - anneeNaissance}`);
+    }
+
+    function trouverMax() {
+        const nombres = prompt("Entrez des nombres séparés par des virgules :").split(",");
+        const max = Math.max(...nombres.map(Number));
+        alert(`Le nombre maximum est : ${max}`);
+    }
+
+    function compterVoyelles() {
+        const texte = prompt("Entrez un texte :").toLowerCase();
+        const voyelles = texte.match(/[aeiouy]/g);
+        alert(`Nombre de voyelles : ${voyelles ? voyelles.length : 0}`);
+    }
+
+    function calculerPourboire() {
+        const montant = parseFloat(prompt("Entrez le montant de l'addition (€):"));
+        const pourboire = (montant * 0.15).toFixed(2);
+        alert(`Le pourboire recommandé est : ${pourboire} €`);
+    }
+
+    function verifierPairImpair() {
+        const nombre = parseInt(prompt("Entrez un nombre:"));
+        const resultat = nombre % 2 === 0 ? "pair" : "impair";
+        alert(`Le nombre ${nombre} est ${resultat}.`);
+    }
+
+    function calculerCalories() {
+        const poids = parseFloat(prompt("Entrez votre poids (kg) :"));
+        const temps = parseFloat(prompt("Entrez le temps de course (minutes) :"));
+        const calories = (poids * 0.063) * temps;
+        alert(`Vous avez brûlé environ ${calories.toFixed(2)} calories.`);
+    }
+
+    function calculerPerimetre() {
+        const longueur = parseFloat(prompt("Entrez la longueur du rectangle (cm) :"));
+        const largeur = parseFloat(prompt("Entrez la largeur du rectangle (cm) :"));
+        const perimetre = 2 * (longueur + largeur);
+        alert(`Le périmètre du rectangle est : ${perimetre} cm`);
+    }
+
+    function creerTableau() {
+        const taille = parseInt(prompt("Entrez la taille du tableau :"));
+        const tableau = [];
+        for (let i = 0; i < taille; i++) {
+            tableau.push(prompt(`Entrez l'élément ${i+1}:`));
+        }
+        alert(`Tableau créé: ${tableau.join(', ')}`);
+    }
+
+    function verifierPalindrome() {
+        const mot = prompt("Entrez un mot :");
+        const motInverse = mot.split('').reverse().join('');
+        alert(mot === motInverse ? "Le mot est un palindrome." : "Le mot n'est pas un palindrome.");
+    }
+
+    function convertirBinaire() {
+        const nombre = parseInt(prompt("Entrez un nombre :"));
+        alert(`Le nombre ${nombre} en binaire est : ${nombre.toString(2)}`);
+    }
+
+    function animerElement() {
+        let elem = document.createElement('div');
+        elem.textContent = "Je suis animé!";
+        elem.style.position = "absolute";
+        elem.style.left = "0px";
+        elem.style.top = "0px";
+        elem.style.backgroundColor = "red";
+        elem.style.padding = "10px";
+        document.body.appendChild(elem);
+
+        let posX = 0;
+        let posY = 0;
+        function deplacer() {
+            if (posX < window.innerWidth - 100) {
+                posX += 5;
+                posY += 3;
+                elem.style.left = posX + "px";
+                elem.style.top = posY + "px";
+                requestAnimationFrame(deplacer);
+            }
+        }
+        deplacer();
+    }
+</script>
+
+</body>
+</html>

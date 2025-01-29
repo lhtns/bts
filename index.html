@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio - Girly Edition 💖</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* --- VIDÉO DE FOND --- */
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- STRUCTURE PRINCIPALE --- */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background-color: rgba(255, 192, 203, 0.8);
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- NAVIGATION --- */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 240, 245, 0.9);
+            padding: 10px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 900px;
+        }
+
+        .dropdown {
+            position: relative;
+            margin: 10px;
+        }
+
+        .dropbtn {
+            background-color: #ffb6c1;
+            color: white;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .dropbtn:hover {
+            background-color: #ff69b4;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: #fff;
+            min-width: 180px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            text-align: left;
+        }
+
+        .dropdown-content a {
+            color: #ff69b4;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ffe4f7;
+            color: #ff1493;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* --- CONTENU PRINCIPAL --- */
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        /* --- FOOTER FIXÉ EN BAS --- */
+        footer {
+            background: rgba(255, 182, 193, 0.8);
+            padding: 15px;
+            font-size: 14px;
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- VIDÉO DE FOND -->
+    <div class="video-bg">
+        <video autoplay muted loop>
+            <source src="2408284-uhd_3840_2160_24fps (1).mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+    </div>
+
+    <!-- HEADER -->
+    <header>🌸 Portfolio - Lemice  🌸</header>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="dropdown">
+            <button class="dropbtn">HTML & CSS</button>
+            <div class="dropdown-content">
+                <a href="TP1/index.html">TP1</a>
+                <a href="TP2/index.html">TP2</a>
+                <a href="TP3/index.html">TP3</a>
+                <a href="TP4/index.html">TP4</a>
+                <a href="TP5/index.html">TP5</a>
+                <a href="TP5/index.html">TP6</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">JavaScript</button>
+            <div class="dropdown-content">
+                <a href="TPJS1/index.html">TP1</a>
+                <a href="TPJS2/index.html">TP2</a>
+                <a href="TPJS3/index.html">TP3</a>
+                <a href="TPJS4/index.html">TP4</a>
+                <a href="TPJS5/index.html">TP5</a>
+
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">PHP</button>
+            <div class="dropdown-content">
+                <a href="http://www.lelelelele.lovestoblog.com/">TP1</a>
+                <a href="http://www.bibilooo.infinityfreeapp.com/?i=1">TP2</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Certifications</button>
+            <div class="dropdown-content">
+                <a href="certifications/certificat 1.pdf">Certification 1</a>
+                <a href="certifications/certificat 2.pdf">Certification 2</a>
+                <a href="certifications/certificat 3.pdf">Certification 3</a>
+                <a href="certifications/certificat 4.pdf">Certification 4</a>
+                <a href="certifications/certificat 5.pdf">Certification 5</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Missions</button>
+            <div class="dropdown-content">
+                <a href="mission1/index.html">Mission 1</a>
+                <a href="mission2/index.html">Mission 2</a>
+                <a href="mission3/index.html">Mission 3</a>
+                <a href="mission4/index.html">Mission 4</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENU PRINCIPAL -->
+    <div class="main-content">
+        <div class="content-box">
+            <p>✨ Voici les différents exercices fait durant nos cours ✨</p>
+        </div>
+    </div>
+
+    <!-- FOOTER FIXÉ EN BAS -->
+    <footer>© 2024 Mon Portfolio | Lemice HAOUAS 💖</footer>
+
+</body>
+</html>

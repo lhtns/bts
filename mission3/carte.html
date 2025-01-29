@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte de visite numérique</title>
+    <style>
+        /* Import Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            outline: none;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        header h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Carte de visite */
+        .business-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            max-width: 400px;
+            text-align: center;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+        }
+
+        .card h2 {
+            font-size: 1.8rem;
+            font-family: 'Orbitron', sans-serif;
+            color: #00c6ff;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            color: #ff9900;
+        }
+
+        .description {
+            margin-top: 15px;
+            font-size: 1rem;
+            color: #ddd;
+        }
+
+        /* Social Buttons */
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-btn {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+        }
+
+        .social-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+        }
+
+        /* Back Home Button */
+        .back-home {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            text-decoration: none;
+            color: #00c6ff;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            color: #ff9900;
+            text-shadow: 0 0 10px rgba(255, 153, 0, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            .card {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Carte de visite</h1>
+    </header>
+
+    <section class="business-card">
+        <div class="card">
+            <h2>Jean Patrick</h2>
+            <p class="title">Développeur Web</p>
+            <p class="description">Passionné de technologies web et d'innovation, je crée des expériences interactives et optimisées pour les utilisateurs.</p>
+
+            <div class="social-links">
+                <a href="https://linkedin.com" target="_blank" class="social-btn">LinkedIn</a>
+                <a href="https://l242m.github.io/siteweb1/" target="_blank" class="social-btn">GitHub</a>
+                <a href="https://twitter.com" target="_blank" class="social-btn">Twitter</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="back-home">
+        <a href="index.html" class="btn">Retour au sommaire</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 TEDx Paris. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

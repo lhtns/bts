@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Contact 🎀</title>
+    <link rel="stylesheet" href="formulaire.css">
+    <style>
+        /* --- Style Général --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: #333;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0px 10px 20px rgba(255, 105, 180, 0.3);
+            width: 50%;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 15px 25px rgba(255, 105, 180, 0.5);
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #ff69b4;
+            text-shadow: 2px 2px 5px rgba(255, 105, 180, 0.2);
+            margin-bottom: 20px;
+        }
+
+        /* --- Formulaire Stylisé --- */
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            font-weight: bold;
+            color: white;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 16px;
+            outline: none;
+            transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        input:focus, textarea:focus {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.02);
+        }
+
+        /* --- Bouton Stylisé --- */
+        .submit-btn {
+            display: inline-block;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            background: #ff80ab;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 4px 6px rgba(255, 105, 180, 0.3);
+        }
+
+        .submit-btn:hover {
+            background: white;
+            color: #ff4081;
+            border: 2px solid #ff4081;
+            transform: scale(1.1);
+        }
+
+        /* --- Bouton Retour --- */
+        .home-button {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background: #ff69b4;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .home-button:hover {
+            background: white;
+            color: #ff69b4;
+            border: 2px solid #ff69b4;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .container {
+                width: 80%;
+            }
+
+            input, textarea {
+                font-size: 14px;
+            }
+
+            .submit-btn, .home-button {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Contactez-nous 🎀</h1>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required>
+            </div>
+
+            <div class="form-group">
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="tel">Téléphone :</label>
+                <input type="tel" id="tel" name="tel" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message :</label>
+                <textarea name="message" id="message" rows="4" required></textarea>
+            </div>
+
+            <input type="submit" value="Envoyer" class="submit-btn">
+
+            <br>
+            <a href="index.html" class="home-button">Retour aux TP3</a>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV de Jul</title>
+    <style>
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .cv-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            transition: 0.4s;
+        }
+
+        .cv-container:hover {
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(0, 255, 255, 0.3);
+        }
+
+        .info {
+            text-align: left;
+        }
+
+        .info h2 {
+            font-size: 1.8rem;
+            color: #00c6ff;
+        }
+
+        .photo img {
+            width: 120px;
+            border-radius: 10px;
+            border: 3px solid #00c6ff;
+            transition: 0.3s;
+        }
+
+        .photo img:hover {
+            transform: scale(1.1);
+        }
+
+        .section {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+            transition: 0.3s;
+        }
+
+        .section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+        }
+
+        h2 {
+            color: #00c6ff;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .groupe {
+            display: flex;
+            justify-content: space-between;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .groupe p {
+            margin-bottom: 5px;
+        }
+
+        .date-forma, .date-exp, .langue {
+            font-weight: bold;
+            color: #ff9900;
+            width: 40%;
+        }
+
+        .forma, .exp-perso, .informatique {
+            width: 60%;
+        }
+
+        .back-home {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .btn-home {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+        }
+
+        .btn-home:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .info, .photo {
+                text-align: center;
+            }
+
+            .groupe {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .date-forma, .date-exp, .langue, .forma, .exp-perso, .informatique {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="cv-container">
+    <div class="header">
+        <div class="info">
+            <h2>Jul au MAX</h2>
+            <p>Né le 14 janvier 1990</p>
+            <p>123 rue de la Musique - 13001 Marseille</p>
+            <p>+33 6 12 34 56 78</p>
+            <p>jul@example.com</p>
+        </div>
+        <div class="photo">
+            <img src="https://www.planetegrandesecoles.com/wp-content/uploads/2023/03/jul-parcours-fortune-musique-.png" alt="Photo de Jul">
+        </div>
+    </div>
+
+    <div class="formation section">
+        <h2>Formation</h2>
+        <div class="groupe">
+            <div class="date-forma">
+                <p>2009 - 2011</p>
+            </div>
+            <div class="forma">
+                <p>Lycée Marseille - Section Littéraire</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exp section">
+        <h2>Expériences Professionnelles</h2>
+        <div class="groupe">
+            <div class="date-exp">
+                <p>2020 - Présent</p>
+                <p>2018 - 2020</p>
+                <p>2015 - 2018</p>
+                <p>2014 - 2015</p>
+            </div>
+            <div class="exp-perso">
+                <p>Jul Music, Marseille<br>Création de l'album <em>La Machine</em> et autres projets.</p>
+                <p>Indépendant<br>Auto-production d'albums et développement de sa fanbase.</p>
+                <p>Fondateur du Label D'Or et de Platine<br>Distribution indépendante d'albums à succès.</p>
+                <p>Premier album <em>Dans ma paranoïa</em><br>Début fulgurant dans le rap français.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="autres section">
+        <h2>Langues & Compétences Informatiques</h2>
+        <div class="groupe">
+            <div class="langue">
+                <p>Français</p>
+                <p>Anglais</p>
+                <p>Production musicale</p>
+                <p>Écriture et composition</p>
+            </div>
+            <div class="informatique">
+                <p>Langue Maternelle</p>
+                <p>Niveau B2</p>
+                <p>Logiciels de production musicale</p>
+                <p>Outils de composition</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Centres d'Intérêt</h2>
+        <p>Musique, Football, Réseaux sociaux, Mode urbaine</p>
+    </div>
+
+    <div class="back-home">
+        <a href="../index.html" class="btn-home">Retour à l'accueil</a>
+    </div>
+</div>
+
+</body>
+</html>

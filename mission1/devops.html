@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingénieur DevOps</title>
+    <link rel="stylesheet" href="devops.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="title">🚀 Ingénieur DevOps</h1>
+        <p class="subtitle">L’expert en automatisation et en intégration continue 🌍</p>
+        
+        <div class="job-info">
+            <h2>🛠️ Qu'est-ce qu'un Ingénieur DevOps ?</h2>
+            <p>L'ingénieur DevOps automatise et optimise les processus de développement, de test et de déploiement. Il garantit une **intégration continue (CI/CD)** et surveille la performance des systèmes en production.</p>
+
+            <h3>🔑 Compétences clés</h3>
+            <div class="skills">
+                <div class="skill-item">
+                    <img src="https://img.icons8.com/ios/50/00ffcc/docker.png" alt="Docker Icon">
+                    <p>Docker</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 80%;">80%</div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <img src="https://img.icons8.com/ios/50/ff007f/kubernetes.png" alt="Kubernetes Icon">
+                    <p>Kubernetes</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 75%;">75%</div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <img src="https://img.icons8.com/ios/50/ffffff/ansible.png" alt="Ansible Icon">
+                    <p>Ansible</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 70%;">70%</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>🎥 Tutoriel Vidéo</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/XXXXX" title="Tutoriel DevOps" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+            <div class="buttons">
+                <a href="index.html" class="btn">🏠 Retour aux Métiers</a>
+                <a href="../index.html" class="btn">⬅ Retour Accueil</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="background-animation"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    <script>
+      VANTA.WAVES({
+        el: "#background-animation",
+        color: 0x00ffcc, // Turquoise néon
+        backgroundColor: 0x121212, // Fond sombre
+        shininess: 30,
+        waveSpeed: 0.8,
+        zoom: 1.2
+      });
+    </script>
+
+    <style>
+        /* --- Global Style --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+            width: 60%;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 32px;
+            background: linear-gradient(90deg, #00ffcc, #ff007f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        .job-info {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        h2, h3 {
+            color: #00ffcc;
+            margin-bottom: 8px;
+        }
+
+        .skills {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .skill-item {
+            text-align: center;
+            width: 30%;
+        }
+
+        .skill-item img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 5px;
+        }
+
+        .progress {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            margin-top: 5px;
+            position: relative;
+            height: 20px;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #00ffcc, #ff007f);
+            height: 100%;
+            line-height: 20px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 5px;
+            transition: width 1s ease-in-out;
+        }
+
+        iframe {
+            margin-top: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 255, 204, 0.3);
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 12px 18px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: linear-gradient(90deg, #00ffcc, #ff007f);
+            box-shadow: 0px 0px 15px rgba(0, 255, 204, 0.6);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 25px rgba(0, 255, 204, 1);
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            .title {
+                font-size: 28px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .btn {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .skill-item {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+
+</body>
+</html>

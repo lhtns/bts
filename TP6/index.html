@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Téléchargements SQL 💾</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* --- Style Général --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #000033);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        /* --- Conteneur principal --- */
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(0, 255, 255, 0.2);
+            width: 350px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #00ffcc;
+            text-shadow: 0px 0px 15px rgba(0, 255, 204, 0.8);
+        }
+
+        /* --- Boutons --- */
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        /* --- Effet néon sur les boutons --- */
+        .btn:first-of-type {
+            background: #00ffcc;
+            color: black;
+            box-shadow: 0px 0px 15px rgba(0, 255, 204, 0.5);
+        }
+
+        .btn:first-of-type:hover {
+            background: #008080;
+            color: white;
+            box-shadow: 0px 0px 25px rgba(0, 255, 204, 0.9);
+            transform: scale(1.1);
+        }
+
+        .btn:nth-of-type(2) {
+            background: #007BFF;
+            color: white;
+            box-shadow: 0px 0px 15px rgba(0, 123, 255, 0.5);
+        }
+
+        .btn:nth-of-type(2):hover {
+            background: #0056b3;
+            box-shadow: 0px 0px 25px rgba(0, 123, 255, 0.9);
+            transform: scale(1.1);
+        }
+
+        .return {
+            display: block;
+            margin-top: 20px;
+            background: #ff0066;
+            color: white;
+            box-shadow: 0px 0px 15px rgba(255, 0, 102, 0.5);
+        }
+
+        .return:hover {
+            background: #cc0052;
+            box-shadow: 0px 0px 25px rgba(255, 0, 102, 0.9);
+            transform: scale(1.1);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 400px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Fichiers SQL 📂</h1>
+        <div class="buttons">
+            <a href="sql (2).jpg" class="btn" download>📊 Structure SQL</a>
+            <a href="gestioncommandes (2).sql" class="btn" download>📥 Télécharger SQL</a>
+        </div>
+        <a href="../index.html" class="btn return">⬅ Retour</a>
+    </div>
+
+</body>
+</html>

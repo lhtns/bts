@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facture en JavaScript</title>
+    <style>
+        /* --- Style Global --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #e6f0ff, #d1e8ff);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        /* --- Conteneur Principal --- */
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            width: 450px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #2C3E50;
+            margin-bottom: 15px;
+        }
+
+        /* --- Tableau Facture --- */
+        .invoice-table {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            padding: 10px;
+            background: #3498db;
+            color: white;
+            border-radius: 6px;
+            margin-bottom: 8px;
+        }
+
+        .input-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .table-cell {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            text-align: center;
+            transition: 0.3s ease;
+            width: 25%;
+        }
+
+        .table-cell:focus {
+            border-color: #3498db;
+            box-shadow: 0px 0px 8px rgba(52, 152, 219, 0.5);
+        }
+
+        .result {
+            background: #f8f9fa;
+            font-weight: bold;
+            cursor: not-allowed;
+        }
+
+        /* --- Boutons --- */
+        .action-row {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .button {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            font-weight: bold;
+        }
+
+        .button:first-of-type {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .button:first-of-type:hover {
+            background: #c0392b;
+            transform: scale(1.05);
+        }
+
+        .button:last-of-type {
+            background: #27ae60;
+            color: white;
+        }
+
+        .button:last-of-type:hover {
+            background: #1e8449;
+            transform: scale(1.05);
+        }
+
+        /* --- Bouton Retour --- */
+        .footer {
+            margin-top: 20px;
+        }
+
+        #home-button {
+            padding: 10px 15px;
+            font-size: 14px;
+            border-radius: 6px;
+            background: #2C3E50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        #home-button:hover {
+            background: #1A252F;
+            transform: scale(1.05);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 480px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🧾 Facture en JavaScript</h1>
+        </header>
+
+        <div class="invoice-table">
+            <div class="table-header">
+                <div class="table-cell">Article</div>
+                <div class="table-cell">Prix</div>
+                <div class="table-cell">Quantité</div>
+                <div class="table-cell">Résultat</div>
+            </div>
+
+            <div class="input-row">
+                <input class="table-cell" type="text" id="article1" placeholder="Article">
+                <input class="table-cell" type="number" id="prix1" placeholder="Prix">
+                <input class="table-cell" type="number" id="quantité1" placeholder="Qté">
+                <input class="table-cell result" type="text" id="result1" placeholder="0" disabled>
+            </div>
+
+            <div class="input-row">
+                <input class="table-cell" type="text" id="article2" placeholder="Article">
+                <input class="table-cell" type="number" id="prix2" placeholder="Prix">
+                <input class="table-cell" type="number" id="quantité2" placeholder="Qté">
+                <input class="table-cell result" type="text" id="result2" placeholder="0" disabled>
+            </div>
+
+            <div class="input-row">
+                <input class="table-cell" type="text" id="article3" placeholder="Article">
+                <input class="table-cell" type="number" id="prix3" placeholder="Prix">
+                <input class="table-cell" type="number" id="quantité3" placeholder="Qté">
+                <input class="table-cell result" type="text" id="result3" placeholder="0" disabled>
+            </div>
+
+            <div class="action-row">
+                <button class="button" onclick="reset()">Réinitialiser</button>
+                <button class="button" onclick="calculer()">Calculer</button>
+            </div>
+
+            <div>
+                <input class="table-cell result" type="text" id="totalResult" placeholder="Total" disabled>
+            </div>
+        </div>
+
+        <div class="footer">
+            <button id="home-button" onclick="window.location.href='../index.html'">⬅ Retour à l'accueil</button>
+        </div>
+    </div>
+
+    <script>
+        function calculer() {
+            let prix1 = parseFloat(document.getElementById("prix1").value) || 0;
+            let quantité1 = parseInt(document.getElementById("quantité1").value) || 0;
+            let prix2 = parseFloat(document.getElementById("prix2").value) || 0;
+            let quantité2 = parseInt(document.getElementById("quantité2").value) || 0;
+            let prix3 = parseFloat(document.getElementById("prix3").value) || 0;
+            let quantité3 = parseInt(document.getElementById("quantité3").value) || 0;
+
+            let res1 = prix1 * quantité1;
+            let res2 = prix2 * quantité2;
+            let res3 = prix3 * quantité3;
+
+            document.getElementById("result1").value = res1.toFixed(2);
+            document.getElementById("result2").value = res2.toFixed(2);
+            document.getElementById("result3").value = res3.toFixed(2);
+
+            let total = res1 + res2 + res3;
+            document.getElementById("totalResult").value = total.toFixed(2);
+        }
+
+        function reset() {
+            location.reload();
+        }
+    </script>
+</body>
+
+</html>

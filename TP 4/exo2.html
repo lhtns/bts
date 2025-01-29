@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUL - Exercice 2 🚀</title>
+    <link rel="stylesheet" href="exo2.css">
+    <style>
+        /* --- Style Général --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #240046, #5a189a, #9d4edd, #ff9a9e);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- Header --- */
+        header h1 {
+            font-size: 50px;
+            color: #ff00ff;
+            text-shadow: 0px 0px 20px rgba(255, 0, 255, 0.8);
+            animation: neonGlow 1.5s infinite alternate;
+        }
+
+        @keyframes neonGlow {
+            from {
+                text-shadow: 0px 0px 10px rgba(255, 0, 255, 0.8);
+            }
+            to {
+                text-shadow: 0px 0px 30px rgba(255, 0, 255, 1);
+            }
+        }
+
+        /* --- Section Boxes --- */
+        .boxes {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .box {
+            width: 30%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(255, 0, 255, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 25px rgba(255, 0, 255, 0.8);
+        }
+
+        .titrebox h2 {
+            font-size: 22px;
+            color: #00ffff;
+            text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        img {
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.8);
+        }
+
+        /* --- Footer --- */
+        footer {
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 0, 255, 0.3);
+        }
+
+        .btn-retour {
+            display: inline-block;
+            font-size: 18px;
+            padding: 12px 25px;
+            background: #00ffff;
+            color: black;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-retour:hover {
+            background: #ff00ff;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .boxes {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .box {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            .btn-retour {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>JUL 🚀🔥</h1>
+    </header>
+
+    <section class="boxes">
+        <div class="box">
+            <div class="titrebox"><h2>Biographie</h2></div>
+            <br>
+            <p>Julien Mari, plus connu sous le nom de scène JUL, est un rappeur et chanteur français né le 14 janvier 1990 à Marseille. Il est célèbre pour ses nombreux albums à succès et pour avoir popularisé un style unique de rap en France. Avec plus de 25 albums en moins de 10 ans, JUL est l'un des artistes les plus prolifiques de la scène rap française et détient de nombreux records de ventes.</p>
+        </div>
+        <div class="box">
+            <div class="titrebox"><h2>Image</h2></div>
+            <br>
+            <img src="https://cdns-images.dzcdn.net/images/artist/4fd79f1a2353ddb194b755e05a4f4cbf/1900x1900-000000-80-0-0.jpg" width="200" alt="JUL">
+        </div>
+        <div class="box">
+            <div class="titrebox"><h2>Discographie</h2></div>
+            <br>
+            <p>
+                🎵 2014 : Dans ma paranoïa <br>
+                🎵 2015 : Je tourne en rond <br>
+                🎵 2016 : Émotions <br>
+                🎵 2017 : La tête dans les nuages <br>
+                🎵 2019 : C’est pas des LOL <br>
+                🎵 2021 : Demain ça ira <br>
+                🎵 2023 : Cœur blanc <br>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <a href="index.html" class="btn-retour">Retour à l'accueil</a>
+        <br><br><br>
+        <p>&copy; 2024. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

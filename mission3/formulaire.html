@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'inscription</title>
+    <style>
+        /* Import Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            outline: none;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        header h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #ff0040, #ff6600);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glitch 1s infinite;
+        }
+
+        /* Form Styling */
+        .form-section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 102, 0, 0.5);
+            backdrop-filter: blur(10px);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+
+        input, select {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 102, 0, 0.4);
+            padding: 10px;
+            border-radius: 5px;
+            color: #fff;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        input:hover, select:hover, input:focus, select:focus {
+            border-color: #ff6600;
+            box-shadow: 0 0 10px rgba(255, 102, 0, 0.6);
+        }
+
+        /* Radio & Checkboxes */
+        .radio-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        .radio-group label {
+            cursor: pointer;
+        }
+
+        /* Submit Button */
+        .btn {
+            background: linear-gradient(90deg, #ff0040, #ff6600);
+            border: none;
+            color: white;
+            padding: 12px;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: 0.3s;
+            box-shadow: 0 0 10px rgba(255, 102, 0, 0.6);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 102, 0, 0.8);
+        }
+
+        /* Back Button */
+        .back-home {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-home a {
+            text-decoration: none;
+            color: #ff6600;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-home a:hover {
+            color: #ff0040;
+            text-shadow: 0 0 10px rgba(255, 102, 0, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Animations */
+        @keyframes glitch {
+            0% { text-shadow: 4px 4px 10px rgba(255, 102, 0, 0.6); }
+            50% { text-shadow: -4px -4px 10px rgba(255, 102, 0, 0.6); }
+            100% { text-shadow: 4px 4px 10px rgba(255, 102, 0, 0.6); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            .form-section {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Formulaire d'inscription</h1>
+    </header>
+
+    <section class="form-section">
+        <form action="" method="POST">
+            <!-- Pseudo -->
+            <label for="pseudo">Pseudo :</label>
+            <input type="text" id="pseudo" name="pseudo" placeholder="Entrez votre pseudo" maxlength="50" required>
+            
+            <!-- Mot de passe -->
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required>
+            
+            <!-- Prénom -->
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" required>
+
+            <!-- Email -->
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
+
+            <!-- Pays -->
+            <label for="pays">Pays :</label>
+            <select id="pays" name="pays">
+                <option value="france">France</option>
+                <option value="belgique">Belgique</option>
+                <option value="suisse">Suisse</option>
+                <option value="canada">Canada</option>
+            </select>
+
+            <!-- Sexe -->
+            <label>Sexe :</label>
+            <div class="radio-group">
+                <input type="radio" id="homme" name="sexe" value="homme" required>
+                <label for="homme">Homme</label>
+
+                <input type="radio" id="femme" name="sexe" value="femme" required>
+                <label for="femme">Femme</label>
+            </div>
+
+            <!-- Date de naissance -->
+            <label for="date-naissance">Date de naissance :</label>
+            <input type="date" id="date-naissance" name="date-naissance" required>
+
+            <!-- Téléphone -->
+            <label for="telephone">Téléphone :</label>
+            <input type="tel" id="telephone" name="telephone" placeholder="Votre numéro">
+
+            <!-- Bouton de validation -->
+            <input type="submit" value="Valider" class="btn">
+        </form>
+    </section>
+
+    <div class="back-home">
+        <a href="index.html">Retour au sommaire</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 TEDx Paris. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

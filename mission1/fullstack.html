@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Développeur Full Stack</title>
+    <link rel="stylesheet" href="fullstack.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <div class="content">
+            <h1 class="title">🚀 Développeur Full Stack</h1>
+            <p class="subtitle">Maîtrise du **Frontend** & **Backend**, un profil ultra recherché !</p>
+            
+            <div class="job-info">
+                <h2>💡 Qu'est-ce qu'un Développeur Full Stack ?</h2>
+                <p>Le développeur Full Stack est un expert polyvalent capable de gérer à la fois **l'interface utilisateur** (*Frontend*) et la **gestion des bases de données & serveurs** (*Backend*).</p>
+
+                <h3>🛠️ Compétences clés :</h3>
+                <ul>
+                    <li>💻 **Frontend** : HTML, CSS, JavaScript (React, Vue.js, Angular)</li>
+                    <li>🖥️ **Backend** : Node.js, Python, PHP, Ruby</li>
+                    <li>🗄️ **Bases de données** : MySQL, MongoDB, PostgreSQL</li>
+                    <li>☁ **Cloud & Serveurs** : AWS, Docker, CI/CD</li>
+                </ul>
+                
+                <h3>🎥 Tutoriel Vidéo</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/XXXXX" title="Tutoriel Full Stack" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <div class="buttons">
+                    <a href="index.html" class="btn">🏠 Retour aux Métiers</a>
+                    <a href="../index.html" class="btn">⬅ Retour Accueil</a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 - Métiers du Développement</p>
+        </footer>
+    </div>
+
+    <style>
+        /* --- Global Style --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
+            width: 60%;
+        }
+
+        .title {
+            font-size: 32px;
+            background: linear-gradient(90deg, #ff007f, #00ffcc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        .job-info {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        h2, h3 {
+            color: #ff007f;
+            margin-bottom: 8px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            font-size: 16px;
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        ul li::before {
+            content: "✔";
+            color: #00ffcc;
+            margin-right: 8px;
+        }
+
+        iframe {
+            margin-top: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(255, 0, 127, 0.3);
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 12px 18px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: linear-gradient(90deg, #ff007f, #00ffcc);
+            box-shadow: 0px 0px 15px rgba(255, 0, 127, 0.6);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 25px rgba(255, 0, 127, 1);
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            .title {
+                font-size: 28px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .btn {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+
+</body>
+</html>

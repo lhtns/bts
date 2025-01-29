@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🖩 Calculatrice Cyberpunk</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* --- Style Général --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle, #11002c, #220044, #330066);
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        /* --- Conteneur Calculatrice --- */
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(255, 0, 255, 0.3);
+            width: 350px;
+        }
+
+        h1 {
+            font-size: 26px;
+            color: #ff00ff;
+            text-shadow: 0px 0px 15px rgba(255, 0, 255, 0.8);
+        }
+
+        /* --- Affichage Calculatrice --- */
+        #display {
+            width: 100%;
+            padding: 15px;
+            font-size: 24px;
+            text-align: right;
+            background: #222;
+            color: #00ffcc;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 255, 204, 0.5);
+        }
+
+        /* --- Boutons Calculatrice --- */
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            padding: 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            transition: all 0.3s ease;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        button:hover {
+            background: #ff00ff;
+            box-shadow: 0px 0px 20px rgba(255, 0, 255, 0.8);
+            transform: scale(1.1);
+        }
+
+        /* --- Bouton Retour --- */
+        .home-button {
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            font-size: 16px;
+            background: #00ffcc;
+            color: black;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .home-button:hover {
+            background: #008080;
+            color: white;
+            box-shadow: 0px 0px 25px rgba(0, 255, 204, 0.9);
+            transform: scale(1.1);
+        }
+
+        /* --- Parité --- */
+        #parity {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #00ffcc;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 400px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="home-button" onclick="window.location.href='../index.html'">Retour à l'accueil</button>
+        <h1>🖩 Calculatrice</h1>
+        <div class="calculator">
+            <input type="text" id="display" disabled>
+            <div class="buttons">
+                <button onclick="appendNumber(7)">7</button>
+                <button onclick="appendNumber(8)">8</button>
+                <button onclick="appendNumber(9)">9</button>
+                <button onclick="operation('+')">+</button>
+                <button onclick="appendNumber(4)">4</button>
+                <button onclick="appendNumber(5)">5</button>
+                <button onclick="appendNumber(6)">6</button>
+                <button onclick="operation('-')">-</button>
+                <button onclick="appendNumber(1)">1</button>
+                <button onclick="appendNumber(2)">2</button>
+                <button onclick="appendNumber(3)">3</button>
+                <button onclick="operation('*')">*</button>
+                <button onclick="appendNumber(0)">0</button>
+                <button onclick="clearDisplay()">C</button>
+                <button onclick="calculateResult()">=</button>
+                <button onclick="operation('/')">/</button>
+            </div>
+            <div id="parity">
+                <p id="parity-result">Parité: -</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentInput = '';
+        let result = 0;
+
+        function appendNumber(number) {
+            currentInput += number;
+            updateDisplay();
+            checkParity();
+        }
+
+        function operation(op) {
+            currentInput += ` ${op} `;
+            updateDisplay();
+        }
+
+        function clearDisplay() {
+            currentInput = '';
+            result = 0;
+            updateDisplay();
+            document.getElementById('parity-result').textContent = 'Parité: -';
+        }
+
+        function calculateResult() {
+            try {
+                result = eval(currentInput);
+                currentInput = result.toString();
+                updateDisplay();
+                checkParity();
+            } catch (e) {
+                currentInput = 'Erreur';
+                updateDisplay();
+            }
+        }
+
+        function updateDisplay() {
+            document.getElementById('display').value = currentInput;
+        }
+
+        function checkParity() {
+            const number = parseInt(currentInput.replace(/[^\d.-]/g, ''), 10);
+            if (!isNaN(number)) {
+                const parity = (number % 2 === 0) ? 'Pair' : 'Impair';
+                document.getElementById('parity-result').textContent = `Parité: ${parity}`;
+            }
+        }
+    </script>
+</body>
+</html>
